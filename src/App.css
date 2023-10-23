@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #191D21;
+  color: white;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.balance {
+  display: flex;
+  align-items: center;
+  color: #AFA9AC;
+  font-weight: 700;
+  font-size: 1vw;
+  justify-content: space-between;
+  padding: 0 15.7vw;
+  margin-top: 2vw;
+  margin-bottom: 0.5vw;
+}
+.balanceDetails {
+  display: flex;
+  align-items: center;
+}
+.resetBalance {
+  background: linear-gradient(180deg, #282E34 0%, #1C1F24 100%);
+  height: 3vw;
+  width: 14vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.resetBalance:hover {
+  color: white;
+}
+.resetBalance:active {
+  background: linear-gradient(180deg, #101113 0%, #1C1F24 100%); 
+  box-shadow: 7px 4px 22px 13px rgba(0, 0, 0, 0.25) inset; 
+  border-left: 1px #282E34 solid; 
+  border-top: 1px #282E34 solid;
+  box-sizing: border-box;
+  color: #9EA0A2;
+}
+.balanceContainer {
+  height: 3vw;
+  width: 14vw;
+  color: white;
+  border-radius: 1vw;
+  background: linear-gradient(180deg, #101113 0%, #1C1F24 100%);
+  border: 1px solid #2d3035;
+  font-weight: 400;
+  margin-left: 1vw;
+  display: flex;
+  align-items: center;
+  padding: 0 1vw;
+}
+.App {
+  display: flex;
+  justify-content: center;
+}
+.leftPart {
+  padding: 0 2vw;
+}
+.rightPart {
+  width: 40%;
+  padding: 0 2vw;
+}
+.bet {
+  width: calc(100% - 1vw);
+  height: 5vw;
+  background: conic-gradient(from 269deg at 100% 100.75%, #1C1F24 -27deg, #0C0D10 72deg);
+  box-shadow: 14px 8px 13px -11px rgba(0, 0, 0, 0.50) inset;
+  border-radius: 1vw;
+  border: 1px #2B2E33 solid;
+  display: flex;
+  padding-left: 1vw;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+}
+.betLabel {
+  font-size: 1vw;
+  color: #AFA9AC;
+}
+.betButtonsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5vw;
+  margin-top: 1vw;
+}
+.betButton {
+  width: 100%;
+  height: 3vw;
+  background: linear-gradient(180deg, #282E34 0%, #1C1F24 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8vw;
+  user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  -webkit-user-select: none; 
+  color: #9EA0A2;
+}
+.betButtonActive {
+  cursor: pointer;
+}
+.betButtonActive:hover {
+  color: white;
+  text-shadow: 0px 0px 1px white;
+}
+.betButtonActive:active {
+  background: linear-gradient(180deg, #101113 0%, #1C1F24 100%); 
+  box-shadow: 7px 4px 22px 13px rgba(0, 0, 0, 0.25) inset; 
+  color: #9EA0A2;
+}
+.inputBet {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+}
+.inputBet:focus {
+  border: none;
+  outline: transparent;
+}
+.inputBetActive {
+  caret-color: transparent;
+}
+.minesCount {
+  width: calc(100% - 0.2vw);
+  height: 3vw;
+  background-color: #0C0C0E;
+  border-radius: 1vw;
+  padding: 0.2vw;
+  display: flex;
+  gap: 0.1vw;
+  justify-content: space-between;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+}
+.minesCountText {
+  width: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  color: #FFC428;
+  height: 100%;
+  user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  -webkit-user-select: none; 
+  flex-direction: column;
+}
+.minesCountTextLabel {
+  font-size: 0.7vw;
+}
+.minesCountButton, .minesCountButton2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.minesCountButton {
+  width: 3vw;
+  height: 100%;
+  background: linear-gradient(180deg, #282E34 0%, #1C1F24 100%);
+  border-radius: 0.9vw;
+  color: #9EA0A2;
+}
+.minesCountButtonActive, .minesCountButton2Active {
+  cursor: pointer;
+}
+.minesCountButtonActive:hover {
+  color: white;
+  text-shadow: 0px 0px 1px white;
+}
+.minesCountButton2 {
+  width: 3vw;
+  height: 100%;
+  border-radius: 0.9vw;
+  background: #0A0701; 
+  border: 0.1vw #FFC428 solid;
+  box-sizing: border-box;
+  color: #FFC428;
+}
+.minesCountButton2Active:hover {
+  background: #5c420e;
+}
+.minesCountButton2Active:active {
+  background: #916817;
+}
+.minesCountButtonActive:active {
+  background: linear-gradient(180deg, #101113 0%, #1C1F24 100%); 
+  box-shadow: 7px 4px 22px 13px rgba(0, 0, 0, 0.25) inset; 
+  border-left: 1px #282E34 solid; 
+  border-top: 1px #282E34 solid;
+  box-sizing: border-box;
+  color: #9EA0A2;
+}
+.flex {
+  display: flex;
+  gap: 0.2vw;
+}
+.startButton {
+  width: 100%;
+  height: 8.5vw;
+  background: #1F2126;
+  border-radius: 1vw;
+  border: 1px #53D8F8 solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: border 0.4s;
+}
+.startButtonIndicator {
+  background-color: #4DCDF1;
+  height: 0.5vw;
+  width: 3vw;
+  border-radius: 2vw;
+  transition: background-color 0.4s;
+}
+.startButtonText {
+  height: 6vw;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+  color: #4DCDF1;
+}
+.multiplierText {
+  font-weight: 400;
+  font-size: 1vw;
+  color: #FFC428;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s;
+}
+.multiplierTextAppear {
+  height: 2vw;
+}
+.cashoutText{
+  color: #FFC428;
+}
+.startGameText {
+  transition: all 0.5s;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.cancelText{
+  color: #94282F;
+}
+.cancelButtonIndicator {
+  background-color: #94282F;
+}
+.cancelButton {
+  border: 1px #94282F solid;
+}
+.cashoutButton {
+  border: 1px #FFC428 solid;
+}
+.cashoutButtonIndicator {
+  background-color: #FFC428;
+}
+.gameDetails {
+  width: 100%;
+  height: 15vw;
+  position: relative;
+  background: conic-gradient(from 220deg at -26.53% 222.83%, #171719 64deg, #171719 167deg, #0C0C0E 168deg);
+  border-radius: 1vw;
+  border: #FFC428 0.1vw solid;
+  box-sizing: border-box;
+  margin-top: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 1vw;
+  color: #FFC428;
+  font-size: 1vw;
+}
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #FFC428;
+}
+.multiplier {
+  width: 100%;
+  height: 3vw;
+  background-color: #1D120F;
+  border-radius: 0.7vw;
+  box-sizing: border-box;
+  border: 0.1vw solid #2B2E33;
+  display: flex;
+  gap: 0.1vw;
+  padding: 0.1vw;
+  margin-bottom: 1vw;
+}
+.multiplierContainer {
+  background-color: #0C0C0E;
+  width: 5.5vw;
+  border: 1px solid #FFC428;
+  border-radius: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  color: #FFC428;
+}
+.minesContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1vw;
+}
+.mines {
+  width: 7vw;
+  height: 7vw;
+  background: linear-gradient(180deg, #282E34 0%, #1C1F24 100%);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  overflow: hidden;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.minesClicking {
+  background: linear-gradient(180deg, #101113 0%, #1C1F24 100%); 
+  box-shadow: 7px 4px 22px 13px rgba(0, 0, 0, 0.25) inset; 
+  border-left: 1px #282E34 solid; 
+  border-top: 1px #282E34 solid;
+  box-sizing: border-box;
+  color: #9EA0A2;
+}
+.bomb {
+  color: #94282F;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+}
+.bomb img {
+  width: 100%;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  z-index: 1;
+}
+.bombBackground {
+  width: 100%; 
+  height: 100%; 
+  background: radial-gradient(85% 85%, #94282F 31%, rgba(77, 205, 241, 0) 73%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.diamond {
+  color:#4DCDF1;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+}
+.diamond img {
+  width: 100%;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  z-index: 1;
+}
+.diamondBackground {
+  width: 100%; 
+  height: 100%; 
+  background: radial-gradient(80% 80%, #4DCDF1 -68%, rgba(77, 205, 241, 0) 69%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.inactiveMines {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0);
+  transition: color 0.3s;
+}
+.inactiveMines:hover {
+  color: rgba(255, 255, 255, 1);
+}
+.detailsContainer {
+  
+  display: flex;
+  justify-content: space-between;
+  
+  margin-bottom: 1vw;
+  align-items: center;
+}
+.detailsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detailsIcon img{
+  width: 1.5vw;
+  margin-right: 2vw;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.removePointer {
+  cursor: default;
+}
+
+/* ------------------------LOADER -------------------- */
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+}
+.loader:before {
+  width: 100%;
+  padding-bottom: 100%;
+  box-shadow: inset 0 0 0 1rem #fff;
+  animation-name: pulsIn;
+}
+.loader:after {
+  width: calc(100% - 2rem);
+  padding-bottom: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 #fff;
+}
+
+@keyframes pulsIn {
+  0% {
+    box-shadow: inset 0 0 0 1rem #fff;
+    opacity: 1;
+  }
+  50%, 100% {
+    box-shadow: inset 0 0 0 0 #fff;
+    opacity: 0;
+  }
+}
+
+@keyframes pulsOut {
+  0%, 50% {
+    box-shadow: 0 0 0 0 #fff;
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 1rem #fff;
+    opacity: 1;
+  }
+}
+    
+/* ------------------------ END LOADER --------------- */
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+  .rightPart {
+    width: calc(100% - 14vw);
+    padding: 0 7vw;
+  }
+  .multiplier {
+    height: 6vw;
+    border-radius: 1vw;
+    margin-top: 3vw;
+    padding: 0.3vw;
+    gap: 0.3vw;
+  }
+  .multiplierContainer {
+    width: 11.5vw;
+    border-radius: 0.9vw;
+    font-size: 2.5vw;
+  }
+  .mines {
+    width: 16vw;
+    height: 16vw;
+  }
+  .leftPart {
+    padding: 0 7vw;
+    margin-top: 2vw;
+  }
+  .betLabel {
+    font-size: 2.5vw;
+  }
+  .bet {
+    width: calc(100% - 1vw);
+    height: 13vw;
+    border-radius: 2vw;
+    font-size: 4.5vw;
+  }
+  .inputBet {
+    font-size: 4.5vw;
+  }
+  .betButton {
+    height: 8vw;
+    border-radius: 3vw;
+    font-size: 3vw;
+  }
+  .betButtonActive:hover {
+    color: #9EA0A2;
+    text-shadow: none;
+  }
+  .minesCount {
+    height: 10vw;
+  }
+  .minesCountButton {
+    width: 10vw;
+    font-size: 3vw
+  }
+  .minesCountButton:hover {
+    color: #9EA0A2;
+    text-shadow: none;
+  }
+  .minesCountButton2 {
+    width: 10vw;
+    font-size: 3vw
+  }
+  .minesCountTextLabel {
+    font-size: 2.7vw;
+  }
+  .minesCountText {
+    font-size: 4.5vw;
+  }
+  .gameDetails {
+    height: 31vw;
+    font-size: 3vw;
+    margin-bottom: 7vw;
+  }
+  .startButtonText {
+    font-size: 3.5vw;
+    height: 14vw;
+  }
+  .startButton {
+    height: 20.5vw;
+    border-radius: 2vw;
+  }
+  .balance {
+    padding: 0 7vw;
+    font-size: 3vw;
+  }
+  .balanceContainer {
+    height: 6vw;
+    width: 25vw;
+    border-radius: 1vw;
+    padding-left: 2vw;
+  }
+  .resetBalance {
+    height: 6vw;
+    width: 25vw;
+  }
+  .resetBalance:hover {
+    color: #AFA9AC;
+  }
+  .detailsIcon img {
+    width: 3.5vw;
+    margin-right: 2vw;
+  }
+  .detailsContainer {
+    margin-bottom: 2vw;
+  }
+  .multiplierTextAppear {
+    height: 4vw;
+  }
+  .multiplierText {
+    font-size: 4vw;
+  }
+  .minesContainer {
+    gap: 0;
+    row-gap: 1vw;
+  }
+}
